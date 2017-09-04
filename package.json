@@ -1,11 +1,11 @@
 {
   "name": "@riim/keypath",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "dist/keypath.js",
-  "typings": "dist/keypath.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "node_modules/.bin/tsc",
+    "build": "rm -rf dist && node_modules/.bin/tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/Riim/keypath#readme",
   "devDependencies": {
-    "typescript": "^2.1.5"
+    "typescript": "^2.5.2"
   }
 }

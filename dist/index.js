@@ -1,9 +1,8 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function keypath(path, obj) {
     if (arguments.length == 1) {
-        return function (obj) {
-            return keypath(path, obj);
-        };
+        return function (obj) { return keypath(path, obj); };
     }
     var keys = path.split('.');
     var value = obj;
@@ -15,5 +14,4 @@ function keypath(path, obj) {
     }
     return value;
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = keypath;
