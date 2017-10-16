@@ -14,4 +14,4 @@ function keypath(path, obj) {
     }
     return value;
 }
-exports.default = keypath;
+exports.keypath = keypath;
