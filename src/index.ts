@@ -1,8 +1,12 @@
-export function keypath(path: string): (obj: object) => any;
-export function keypath(path: string, obj: object): any;
-export function keypath(path: string, obj?: object): any {
+export function keypath<T = any>(path: string, obj: object): T;
+export function keypath<T = any>(path: string): <U = T>(obj: object) => U;
+export function keypath(path: string, obj?: object) {
 	if (arguments.length == 1) {
-		return (obj: object): any => keypath(path, obj);
+		return (obj: object) => keypath(path, obj);
+	}
+
+	if (path == '') {
+		return obj;
 	}
 
 	let keys = path.split('.');
