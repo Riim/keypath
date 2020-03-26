@@ -4,13 +4,13 @@ function keypath(path, obj) {
     if (arguments.length == 1) {
         return (obj) => keypath(path, obj);
     }
-    if (path == "") {
+    if (typeof path == 'string' ? path == '' : !path.length) {
         return obj;
     }
-    let keys = path.split(".");
+    let keys = typeof path == 'string' ? path.split('.') : path;
     let value = obj;
-    for (let i = 0, l = keys.length; i < l; i++) {
-        value = value[keys[i]];
+    for (let key of keys) {
+        value = value[key];
         if (value == null) {
             break;
         }
