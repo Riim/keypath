@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/Riim/keypath#readme",
   "devDependencies": {
-    "typescript": "^3.3.3333"
+    "typescript": "^3.8.3"
   }
 }

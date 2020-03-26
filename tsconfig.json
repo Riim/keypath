@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"declaration": true,
 		"experimentalDecorators": true,
-		"lib": ["dom", "es2017"],
+		"lib": ["es2017"],
 		"module": "commonjs",
 		"newLine": "lf",
 		"noImplicitAny": true,
@@ -12,7 +12,7 @@
 		"preserveConstEnums": true,
 		"strictNullChecks": true,
 		"suppressImplicitAnyIndexErrors": true,
-		"target": "es6"
+		"target": "esnext"
 	},
 	"files": [
 		"src/index.ts"

@@ -1,24 +1,21 @@
+export function keypath<T = any>(path: string | Array<string>, obj: object): T | null | undefined;
 export function keypath<T = any>(
-	path: string,
-	obj: object
-): T | null | undefined;
-export function keypath<T = any>(
-	path: string
+	path: string | Array<string>
 ): <U = T>(obj: object) => U | null | undefined;
-export function keypath(path: string, obj?: object) {
+export function keypath(path: string | Array<string>, obj?: object) {
 	if (arguments.length == 1) {
 		return (obj: object) => keypath(path, obj);
 	}
 
-	if (path == "") {
+	if (typeof path == 'string' ? path == '' : !path.length) {
 		return obj;
 	}
 
-	let keys = path.split(".");
-	let value = obj as any;
+	let keys = typeof path == 'string' ? path.split('.') : path;
+	let value = obj;
 
-	for (let i = 0, l = keys.length; i < l; i++) {
-		value = value[keys[i]];
+	for (let key of keys) {
+		value = value![key];
 
 		if (value == null) {
 			break;
